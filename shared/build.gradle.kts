@@ -21,6 +21,12 @@ kotlin {
             baseName = "shared"
             isStatic = true
         }
+
+        it.compilations.all {
+            kotlinOptions {
+                freeCompilerArgs = listOf("-linker-options", "-L/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator")
+            }
+        }
     }
 
     sourceSets {
